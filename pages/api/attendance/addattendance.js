@@ -50,7 +50,7 @@ const handler = nc({
 
         const {empId,totalmin,timeIn,timeOut,day,month,year,lat,lng,datetime,locId,userId} = req.body;
          
-      //dre mag add sang attendance
+  
 
       await dbConnect();
 
