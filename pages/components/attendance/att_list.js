@@ -40,10 +40,10 @@ const Att_list = () => {
 
         useEffect(() => {             
           
-          {session && getData(session.user._id)};  
+          session && getData(session.user._id) 
     
              
-            }, []);
+            }, [session]);
 
         
     

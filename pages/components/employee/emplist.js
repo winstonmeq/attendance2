@@ -59,11 +59,11 @@ const Emplist = () => {
         useEffect(() => {       
             
             
-            {session &&   getData(session.user._id)}                                     
+            session &&   getData(session.user._id)                                 
         
     
              
-            }, []);
+            }, [session]);
 
 
          
