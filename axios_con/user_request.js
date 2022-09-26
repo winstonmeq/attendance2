@@ -9,7 +9,7 @@ import { getValue } from "../util/common"
 export const createUser = async (form) => {
     try {
 
-        const res = await axios.post('http://192.168.102.18:3000/api/user/addUser', form);
+        const res = await axios.post('https://attendance2-dtjy7c1pz-winstonmeq.vercel.app/api/user/addUser', form);
         return res.data;
 
     }catch(error){
