@@ -14,6 +14,11 @@ const OfficeSchema = mongoose.Schema({
     
 
     },
+    officeAdd: {
+        type:String,
+    
+
+    },
      
     empId: {
         type: mongoose.Schema.Types.ObjectId,
