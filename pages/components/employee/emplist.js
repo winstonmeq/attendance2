@@ -66,11 +66,7 @@ const Emplist = () => {
             }, []);
 
 
-            if (!session || !data) {
-                return <Loader />
-                
-              }
-
+         
     
 
             const columns = [    

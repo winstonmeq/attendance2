@@ -45,11 +45,7 @@ const Att_list = () => {
              
             }, []);
 
-            if (!session || !data) {
-              return <Loader />
-              
-            }
-
+        
     
 
             const columns = [    

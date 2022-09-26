@@ -38,7 +38,7 @@ No internet? No problem. Track time even when the connection drops.
       </Text>
       </Box>
       <Box w={{ base: '80%', md: '60%', lg: '60%' }} >
-       <Image src={"/images/GPSFR-Manila.png"} width={500}
+       <Image src={"/images/GPSFR-Manila.png"} alt={"GPS"} width={500}
       height={500} ></Image>
       </Box>
     
@@ -55,7 +55,7 @@ Attendance data synced from the attendance app to the cloud so you can monitor t
   </Text>
       </Box>
       <Box w={{ base: '80%', md: '60%', lg: '60%' }} >
-       <Image src={"/images/offline-clock-in-and-out.png"} width={500}
+       <Image src={"/images/offline-clock-in-and-out.png"} alt={"offline"} width={500}
       height={500} ></Image>
       </Box>
      

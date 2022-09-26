@@ -49,11 +49,7 @@ const Loc_list = () => {
              
             }, []);
     
-            if (!session || !data) {
-                return <Loader />
-                
-              }
-
+         
 
             const columns = [    
  

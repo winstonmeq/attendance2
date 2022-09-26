@@ -51,12 +51,7 @@ const EmpAsign = ({empid,bioid,fname,lname}) => {
 
         }
 
-        useEffect(() => {         
-          
-          console.log(fname, lname)
-             
-            }, []);
-    
+       
 
         const getData2 = async (id) => {    
 
