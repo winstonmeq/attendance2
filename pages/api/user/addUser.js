@@ -72,7 +72,11 @@ const handler = nc({
         const userDoc = saveUser._doc;
         delete userDoc.password;
 
-        responseHandler(saveUser, res, 200);
+        //responseHandler(saveUser, res, 200);
+         res.status(200).json(({ body: "OK" }))
+
+        
+        
         dbConnect.close();
         
       } else {
