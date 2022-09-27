@@ -7,7 +7,7 @@ export const addEmployee = async (form) => {
     try {
 
        
-        const res = await axios.post('https://attendance2-apkqba08e-winstonmeq.vercel.app/api/employee/add_employee', form);
+        const res = await axios.post('https://attendance2-flame.vercel.app/api/employee/add_employee', form);
         return res.data;
 
     }catch(error){
@@ -19,7 +19,7 @@ export const addEmployee = async (form) => {
 export const empList = async (userId) => {
     try {
  
-        const res = await axios.post('https://attendance2-apkqba08e-winstonmeq.vercel.app/api/employee/emplist',userId);
+        const res = await axios.post('https://attendance2-flame.vercel.app/api/employee/emplist',userId);
         return res.data;
         
 
@@ -33,7 +33,7 @@ export const empList = async (userId) => {
 export const getEmployee = async (bId) => {
     try {
 
-        const res = await axios.post('https://attendance2-apkqba08e-winstonmeq.vercel.app/api/employee/getEmployee',bId);
+        const res = await axios.post('https://attendance2-flame.vercel.app/api/employee/getEmployee',bId);
         return res.data;
 
     }catch(error){
