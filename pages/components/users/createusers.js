@@ -24,7 +24,7 @@ const CreateUser = () => {
 
     signOut({ redirect: true }).then(result => {
        
-      router.push('https://attendance2-apkqba08e-winstonmeq.vercel.app/components/users/signIn')
+      router.push('https://attendance2-flame.vercel.app/components/users/signIn')
     });
 }
 
