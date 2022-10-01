@@ -85,7 +85,7 @@ const Att_list = () => {
           
            
             {        
-                name:"Image",
+                name:"Selfie",
                 cell: (d) =>(
                     
                         <Avatar size={'lg'}
