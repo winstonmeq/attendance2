@@ -64,7 +64,7 @@ const Map = ({coordinates}) => {
 
 
 
-       const apiIsLoaded = (map, maps) => {
+       const addCircle = (map, maps) => {
         circle = new maps.Circle({
           strokeColor: "#FF0000",
           strokeOpacity: 0.8,
@@ -142,7 +142,7 @@ const points = [
                 setlng(e.lng)
 
                }}
-              onGoogleApiLoaded={({ map, maps }) => {renderMarkers(map,maps), apiIsLoaded(map,maps)}
+              onGoogleApiLoaded={({ map, maps }) => {renderMarkers(map,maps), addCircle(map,maps)}
               }
 
 
