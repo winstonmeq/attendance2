@@ -86,10 +86,10 @@ const Att_list = () => {
           
            
             {        
-                name:"Selfie",
+                name:"Image",
                 cell: (d) =>(
                     
-                  <EmpImage imageLink={d.image}/> 
+                 <EmpImage imageLink={d.image}/>
                     
                 )          
           
