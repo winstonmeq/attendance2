@@ -13,20 +13,13 @@ const EmpImage = ({imageLink}) => {
 
 
 return (
-    <>
-    <Flex>
-    <Button onClick={onOpen}><Avatar size={'lg'}
-                  src={imageLink}></Avatar> </Button>
-<Modal isOpen={isOpen} onClose={onClose}>
-<ModalContent>
-image here
-</ModalContent>
-</Modal>
 
+    <Flex>
+   kljlkjl
     
                     
     </Flex>
-    </>
+    
 )
 
 
