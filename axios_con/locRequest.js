@@ -17,6 +17,7 @@ export const addlocation = async (form) => {
 }
 
 
+
 export const locList = async (userId) => {
     try {
  
