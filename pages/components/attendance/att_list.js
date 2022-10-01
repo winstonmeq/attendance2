@@ -7,6 +7,7 @@ import { Flex, Avatar, Button, Spacer } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Loader from "../loader";
 import { useSession } from "next-auth/react";
+import FocusImage from './focusImage';
 
 
 
@@ -87,9 +88,8 @@ const Att_list = () => {
             {        
                 name:"Selfie",
                 cell: (d) =>(
-                    
-                        <Avatar size={'lg'}
-                  src={d.image}></Avatar> 
+                  
+                    <FocusImage imagelink={d.image}/>
                     
                 )          
           
