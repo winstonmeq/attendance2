@@ -89,7 +89,7 @@ const Att_list = () => {
                 name:"Selfie",
                 cell: (d) =>(
                   
-                    <FocusImage />
+                    <FocusImage imagelink={d.image} />
                     
                 )          
           

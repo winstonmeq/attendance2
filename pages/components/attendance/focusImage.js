@@ -1,6 +1,6 @@
 
 import { Flex, Box,Input,useDisclosure,Modal,ModalBody,ModalContent, ModalFooter,
-    Button, InputGroup,InputLeftAddon, Center, Stack } from "@chakra-ui/react";
+    Button, Avatar, InputGroup,InputLeftAddon, Center, Stack } from "@chakra-ui/react";
 
 
 
@@ -14,7 +14,8 @@ const FocusImage = ({imagelink}) => {
 
 return (
     <Flex>
-     <Button onClick={onOpen}>kkkk </Button>
+     <Button onClick={onOpen}><Avatar size={'lg'}
+                  src={imagelink}></Avatar> </Button>
       
 
      <Modal isOpen={isOpen} onClose={onClose}>
