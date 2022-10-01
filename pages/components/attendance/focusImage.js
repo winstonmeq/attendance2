@@ -23,7 +23,7 @@ return (
         <ModalContent>
            <Box>
 
-         {imageLink}
+          imagelink
 
            </Box>
         </ModalContent>
