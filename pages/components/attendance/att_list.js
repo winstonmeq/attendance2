@@ -7,7 +7,6 @@ import { Flex, Avatar, Button, Spacer } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Loader from "../loader";
 import { useSession } from "next-auth/react";
-import EmpImage from './empImage';
 
 
 
@@ -86,10 +85,11 @@ const Att_list = () => {
           
            
             {        
-                name:"Image",
+                name:"Selfie",
                 cell: (d) =>(
                     
-                 <EmpImage imageLink={d.image}/>
+                        <Avatar size={'lg'}
+                  src={d.image}></Avatar> 
                     
                 )          
           
