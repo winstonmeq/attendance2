@@ -1,6 +1,7 @@
 
 import { Flex, Box,Input,useDisclosure,Modal,ModalBody,ModalContent, ModalFooter,
     Button, Avatar, InputGroup,InputLeftAddon, Center, Stack } from "@chakra-ui/react";
+import Image from 'next/image';
 
 
 
@@ -14,13 +15,16 @@ const FocusImage = ({imagelink}) => {
 
 return (
     <Flex>
-     <Button onClick={onOpen}><Avatar size={'lg'}
+     <Button onClick={onOpen}><Avatar size={'sm'}
                   src={imagelink}></Avatar> </Button>
       
 
      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalContent>
-            lsdkfjsldf
+           <Box>
+            <Image src={imagelink} width={"100"} height={"100"} />
+
+           </Box>
         </ModalContent>
 
 

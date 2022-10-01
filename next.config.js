@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  image: {
+    domains: ['https://rest.cloudinary.com'],
+  },
  
    async headers() {
     return [
