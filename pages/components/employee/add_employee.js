@@ -31,37 +31,15 @@ const Add_employee = () => {
 
 
 
-  const handleimage = (e) => {
-    const file = e.target.files[0];
-    console.log(file)
-    setimageInput(file)
-    const fileReader = new FileReader();
-    fileReader.onload = function (e) {
-     console.log(e.target.result)
-     setimage(e.target.result)
-    }
-    fileReader.readAsDataURL(file)
-   
-   }
-
-
   const signUpHandler = async (e) => {
     
     e.preventDefault();
 
-    const form = new FormData();
+ 
+    const payload = {bioId, fName,lName, designation, office, mobile, address, userId:session.user._id, image:"no image"}
 
-    form.append('bioId',bioId)
-    form.append('fName', fName)
-    form.append('lName', lName)
-    form.append('designation', designation)
-    form.append('office', office)
-    form.append('mobile', mobile)
-    form.append('address', address)
-    form.append('userId',session.user._id)
-    form.append('image', imageInput)
-
-    const result = await addEmployee(form); 
+     
+    const result = await addEmployee(payload); 
 
    
 
@@ -92,6 +70,7 @@ const Add_employee = () => {
  <Flex>
  {/* {console.log(session.user._id)} */}
  <Button onClick={onOpen}>Add Employee</Button>
+
 <Modal isOpen={isOpen} onClose={onClose}>
   
   <ModalContent>
@@ -186,18 +165,6 @@ const Add_employee = () => {
        </InputGroup>
       
      
-       <InputGroup>
-      <Input
-        type="file"       
-        onChange={(e) => {handleimage(e)}}
-      />
-    </InputGroup>
-
-    <Box width={'100'}>
-     {image && <Image src={image} width={100} height={100} alt=""></Image>}
-    </Box>
-
-   
 
        </Stack>
 
