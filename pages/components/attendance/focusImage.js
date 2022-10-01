@@ -1,7 +1,7 @@
 
 import { Flex, Box,Input,useDisclosure,Modal,ModalBody,ModalContent, ModalFooter,
-    Button, Avatar, InputGroup,InputLeftAddon, Center, Stack } from "@chakra-ui/react";
-import Image from 'next/image';
+    Button, Avatar,Image, InputGroup,InputLeftAddon, Center, Stack } from "@chakra-ui/react";
+
 
 
 
@@ -23,7 +23,13 @@ return (
         <ModalContent>
            <Box>
 
-          imagelink
+          <Image
+                // Absolute URL
+                src={imagelink}
+                alt='User profile picture'
+                width={300}
+                height={300}
+            />
 
            </Box>
         </ModalContent>
