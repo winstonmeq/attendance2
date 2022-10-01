@@ -23,13 +23,7 @@ return (
         <ModalContent>
            <Box>
 
-           <Image
-                // Absolute URL
-                src={imagelink}
-                alt='User profile picture'
-                width={300}
-                height={300}
-            />
+         {imageLink}
 
            </Box>
         </ModalContent>
