@@ -39,9 +39,10 @@ const Add_employee = () => {
     const payload = {bioId, fName,lName, designation, office, mobile, address, userId:session.user._id, image:"no image"}
 
      
-    const result = await addEmployee(payload); 
+    console.log('payload', payload)
 
-   
+    
+    const result = await addEmployee(payload);    
 
     if (result.hasError == true) {
       if (result.errorMessage.code == 10011) {

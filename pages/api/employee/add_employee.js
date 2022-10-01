@@ -1,7 +1,6 @@
 import { dbConnect } from "../../../connect/dbconnect";
 import { errorHandler,responseHandler } from "../../../util/common";
-import User from "../../../model/User";
-import bcrypt from "bcrypt";
+import Employee from "../../../model/Employee";
 
 
 export default async function handler(req, res) {
