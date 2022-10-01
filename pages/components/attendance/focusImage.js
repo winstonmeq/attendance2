@@ -14,8 +14,7 @@ const FocusImage = ({imagelink}) => {
 
 return (
     <Flex>
-     <Button onClick={onOpen}><Avatar size={'lg'}
-                  src={imagelink}></Avatar> </Button>
+     <Button onClick={onOpen}>kkkk </Button>
       
 
      <Modal isOpen={isOpen} onClose={onClose}>
