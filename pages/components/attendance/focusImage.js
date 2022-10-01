@@ -15,16 +15,21 @@ const FocusImage = ({imagelink}) => {
 
 return (
     <Flex>
-     <Button onClick={onOpen}> </Button>
+     <Button onClick={onOpen}><Avatar size={'sm'}
+                  src={imagelink}></Avatar> </Button>
       
 
      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalContent>
            <Box>
 
-           <Avatar size={'lg'}
-                  src={imagelink}></Avatar>
-            {/* <Image src={imagelink} width={"100"} height={"100"} /> */}
+           <Image
+                // Absolute URL
+                src='https://unsplash.com/photos/XV1qykwu82c'
+                alt='User profile picture'
+                width={300}
+                height={300}
+            />
 
            </Box>
         </ModalContent>
