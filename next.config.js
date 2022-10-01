@@ -2,7 +2,7 @@
 const nextConfig = {
 
   image: {
-    domains: ['https://rest.cloudinary.com'],
+    domains: ['https://res.cloudinary.com'],
   },
  
    async headers() {
