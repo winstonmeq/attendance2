@@ -28,8 +28,12 @@ const Att_list = () => {
            
 
                 if(!attlist.body == ""){  
+
+              
+              console.log(attlist.body);
                   
               setdata(attlist.body);
+
                }      
             
               }else {

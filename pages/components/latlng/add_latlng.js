@@ -55,7 +55,7 @@ const Add_latlong = ({lat, lng, rad, Name }) => {
   
          console.log("location data added") 
 
-        router.reload('latlng_list')
+        router.replace('latlng_list')
        
       
         }
