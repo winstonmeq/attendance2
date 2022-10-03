@@ -47,7 +47,7 @@ const Add_employee = () => {
     if (result.hasError == true) {
       if (result.errorMessage.code == 10011) {
 
-        setErrorMessage("Duplicate Employee Id");
+        console.log("Duplicate Employee Id");
 
       } else {
 
