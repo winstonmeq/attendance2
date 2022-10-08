@@ -150,8 +150,10 @@ const Emplist = () => {
 
     return (
     
-       
+      
         <Flex direction={'column'}>
+
+
         <Add_employee  />
              {console.log("list",data)}
              <DataTable columns ={columns} data={data} title="Employee Lists"  defaultSortFieldId="createdAt" pagination />

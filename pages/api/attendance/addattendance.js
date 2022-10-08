@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     try {
 
       
-        const {empId,totalmin,timeIn,timeOut,day,month,year,lat,lng,datetime,image,locId,userId} = req.body;
+        const {empId,totalmin,timeIn,timeOut,day,month,year,lat,lng,timelog,image,locId,userId} = req.body;
          
   
 
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
         year:year,
         lat:lat,
         lng:lng,
-        datetime:datetime,
+        timelog:timelog,
         locId:locId,
         image:image,
         userId:userId

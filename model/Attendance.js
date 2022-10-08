@@ -37,9 +37,8 @@ const AttendanceSchema = mongoose.Schema({
 
     },
 
-    datetime:{
-        type:Date,
-        trim:true
+    timelog:{
+        type:String,
 
     },
     image:{

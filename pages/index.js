@@ -20,8 +20,9 @@ export default function Home() {
     // alignItems={"center"}
     height={"100vh"}    
     position={"relative"}
-    >  
-  
+    >   
+  {console.log('env',process.env.NEXTAUTH_URL)}
+
  
 <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
 <Box w={{ base: '100%', md: '50%', lg: '100%' }}>

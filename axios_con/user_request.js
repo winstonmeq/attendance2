@@ -8,7 +8,7 @@ import { getValue } from "../util/common"
 export const createUser = async (form) => {
     try {
 
-        const res = await axios.post('https://attendance2-flame.vercel.app/api/user/addUser', form);
+        const res = await axios.post(process.env.NEXTAUTH_URL + '/api/user/addUser', form);
         return res.data;
 
     }catch(error){

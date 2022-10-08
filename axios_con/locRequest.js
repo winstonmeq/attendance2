@@ -7,7 +7,7 @@ import { getValue } from "../util/common"
 export const addlocation = async (form) => {
     try {
 
-        const res = await axios.post('https://attendance2-flame.vercel.app/api/location/addLocation', form);
+        const res = await axios.post(process.env.NEXTAUTH_URL + '/api/location/addLocation', form);
         return res.data;
 
     }catch(error){
@@ -21,7 +21,7 @@ export const addlocation = async (form) => {
 export const locList = async (userId) => {
     try {
  
-        const res = await axios.post('https://attendance2-flame.vercel.app/api/location/api_loclist',userId);
+        const res = await axios.post(process.env.NEXTAUTH_URL + '/api/location/api_loclist',userId);
         return res.data;
         
 
@@ -37,7 +37,7 @@ export const locList = async (userId) => {
 export const locationList = async (empId) => {
     try {
 
-        const res = await axios.post('https://attendance2-flame.vercel.app/api/location/getlocation',empId);
+        const res = await axios.post(process.env.NEXTAUTH_URL + '/api/location/getlocation',empId);
         return res.data;
 
     }catch(error){

@@ -26,9 +26,9 @@ return (
            <Image
                 // Absolute URL
                 src={imagelink}
-                alt='User profile picture'
-                width={300}
-                height={300}
+                alt='Selfie'
+                width={400}
+                height={400}
             />
 
            </Box>

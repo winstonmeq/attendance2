@@ -2,21 +2,36 @@ import { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { attList } from '../../../axios_con/attrequest';
 import { useEffect } from 'react';
-import Image from 'next/image';
-import { Flex, Avatar, Button, Spacer } from '@chakra-ui/react';
+import { Flex, Avatar, Box, Button, Spacer } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Loader from "../loader";
 import { useSession } from "next-auth/react";
 import FocusImage from './focusImage';
-
-
-
+import { useRef } from 'react';
+import { useDownloadExcel } from 'react-export-table-to-excel';
+import moment from 'moment/moment';
 
 const Att_list = () => {
 
     const [data, setdata] = useState([])
     const {data: session} =  useSession();
     const router = useRouter()
+
+
+    const tableRef = useRef(null);
+
+    const { onDownload } = useDownloadExcel({
+        currentTableRef: tableRef.current,
+        filename: 'attendance',
+        sheet: 'attlog'
+    })
+
+    // const download = () => {
+    //   const dummyData = "rahul,delhi,accountsdept\n";
+    //   const csvContent = `data:text/text;charset=utf-8,${dummyData}`;
+    //   const encodedURI = encodeURI(csvContent);
+    //   window.open(encodedURI);
+    // };
 
 
     const getData = async (userId) => {     
@@ -115,12 +130,44 @@ const Att_list = () => {
 
 
     return (
-        <>
-       
-             {console.log("list",data)}
-             <DataTable columns ={columns} data={data} title="Attendance Lists"  defaultSortFieldId="createdAt" pagination />
+        <Flex direction={'column'}>
 
-        </>
+      <Box>
+      {console.log("list",data)}
+             <DataTable  columns ={columns} data={data} title="Attendance Lists"  defaultSortFieldId="createdAt" pagination />
+
+      </Box>
+      <Box>
+      <Button _hover={'dd'} onClick={onDownload}> Export excel </Button>
+
+<table  ref={tableRef}>
+ <tbody>
+ {data.map((items)=>(
+
+  <tr>
+      <td>{items.empInfo[0].bioId}</td>
+       <td>{moment(items.timelog).format('YYYY-MM-D, hh:mm:ss')}</td>
+       <td>1</td>
+       <td>0</td>   
+       
+     </tr>
+
+
+ )
+
+ )}
+     
+   
+ </tbody>
+</table>
+      </Box>
+       
+          
+        </Flex>
+    
+
+
+        
     )
 
 
