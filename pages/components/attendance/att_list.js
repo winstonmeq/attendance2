@@ -142,9 +142,9 @@ const Att_list = () => {
 
 <table  ref={tableRef}>
  <tbody>
- {data.map((items)=>(
+ {data.map((items,key)=>(
 
-  <tr>
+  <tr key={key}>
       <td>{items.empInfo[0].bioId}</td>
        <td>{moment(items.timelog).format('YYYY-MM-D, hh:mm:ss')}</td>
        <td>1</td>
