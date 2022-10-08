@@ -5,13 +5,7 @@ import Employee from "../../../model/Employee";
 
 export default async function handler(req, res) {
 
-    if (req.method !== "POST") {
-  
-      errorHandler("Invalide Request Type is not a POST", res);
-  
-    } else {      
-
-  
+   
       try {
 
         const { bioId,fName,lName,designation,office,mobile,address,image,userId} = req.body;
@@ -51,7 +45,7 @@ export default async function handler(req, res) {
       } catch (error) {
         errorHandler(error, res);
       }
-    }
+    
   }
 
 
