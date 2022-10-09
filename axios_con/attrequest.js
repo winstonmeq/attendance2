@@ -18,6 +18,19 @@ export const addatt = async (form) => {
 
 
 
+export const attemp = async (empId) => {
+    try {
+
+        const res = await axios.post(process.env.NEXTAUTH_URL + '/api/attendance/getattempId',empId);
+        return res.data;
+
+    }catch(error){
+
+        return getValue(error,["response","data"]);
+    }
+}
+
+
 
 export const attList = async (userId) => {
     try {
