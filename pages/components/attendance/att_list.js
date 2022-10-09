@@ -128,7 +128,7 @@ const Att_list = () => {
 
       </Box>
       <Box>
-      {/* {en && <Downloadxcel data = {data} />} */}
+      {en && <Downloadxcel data = {data} />}
 
       </Box>
        

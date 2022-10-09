@@ -18,7 +18,7 @@ export default async function handler(req, res) {
          
         const getemp = await Attendance.aggregate([
             
-            { $match : { empId: require('mongoose').Types.ObjectId(empId)}},
+            { $match : { empId: require('mongoose').Types.ObjectId(empId)}, $group: {day:10}},
                         
     
         ]).exec();
