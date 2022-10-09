@@ -11,7 +11,7 @@ const nextConfig = {
 
     NEXTAUTH_SECRET: 'v7COYqKpEdnCbd5aISAw9BxjupOLKYCgBVZ2kwusMNs=',
 
-     NEXTAUTH_URL: 'https://attendance2-flame.vercel.app',
+     NEXTAUTH_URL: https://attendance2-flame.vercel.app,
    // NEXTAUTH_URL: 'http://192.168.102.18:3000',
  },
  
