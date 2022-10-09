@@ -7,24 +7,21 @@ import { useRouter } from 'next/router';
 import Loader from "../loader";
 import { useSession } from "next-auth/react";
 import FocusImage from './focusImage';
-import { useRef } from 'react';
-import { useDownloadExcel } from 'react-export-table-to-excel';
-import moment from 'moment/moment';
+import Downloadxcel from './download';
+
 
 const Att_list = () => {
 
     const [data, setdata] = useState([])
     const {data: session} =  useSession();
+    const [en,seten] = useState(false);
     const router = useRouter()
 
 
-    const tableRef = useRef(null);
 
-    const { onDownload } = useDownloadExcel({
-        currentTableRef: tableRef.current,
-        filename: 'attendance',
-        sheet: 'attlog'
-    })
+    const dload = () => {
+      seten(true)
+    }
 
     // const download = () => {
     //   const dummyData = "rahul,delhi,accountsdept\n";
@@ -114,7 +111,7 @@ const Att_list = () => {
                 name:"Action",
                 cell: (d) =>(
                     <Flex direction={'row'}>
-                        <Button size={'sm'}>Edit</Button>                       
+                        <Button size={'sm'} onClick={dload} >Download</Button>                       
                     </Flex>                  
                     
                 
@@ -131,35 +128,15 @@ const Att_list = () => {
 
     return (
         <Flex direction={'column'}>
-
       <Box>
+      <Button onClick={dload}>Download</Button>
       {console.log("list",data)}
              <DataTable  columns ={columns} data={data} title="Attendance Lists"  defaultSortFieldId="createdAt" pagination />
 
       </Box>
       <Box>
-      <Button _hover={'dd'} onClick={onDownload}> Export excel </Button>
+      {en && <Downloadxcel data = {data} />}
 
-<table  ref={tableRef}>
- <tbody>
- {data.map((items,key)=>(
-
-  <tr key={key}>
-      <td>{items.empInfo[0].bioId}</td>
-       <td>{moment(items.timelog).format('YYYY-MM-D, hh:mm:ss')}</td>
-       <td>1</td>
-       <td>0</td>   
-       
-     </tr>
-
-
- )
-
- )}
-     
-   
- </tbody>
-</table>
       </Box>
        
           
