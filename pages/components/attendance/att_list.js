@@ -23,14 +23,7 @@ const Att_list = () => {
       seten(true)
     }
 
-    // const download = () => {
-    //   const dummyData = "rahul,delhi,accountsdept\n";
-    //   const csvContent = `data:text/text;charset=utf-8,${dummyData}`;
-    //   const encodedURI = encodeURI(csvContent);
-    //   window.open(encodedURI);
-    // };
-
-
+  
     const getData = async (userId) => {     
 
       const payload = {userId}
@@ -111,7 +104,7 @@ const Att_list = () => {
                 name:"Action",
                 cell: (d) =>(
                     <Flex direction={'row'}>
-                        <Button size={'sm'} onClick={dload} >Download</Button>                       
+                        <Button size={'sm'} onClick={dload} >Save Data</Button>                       
                     </Flex>                  
                     
                 
@@ -135,7 +128,7 @@ const Att_list = () => {
 
       </Box>
       <Box>
-      {en && <Downloadxcel data = {data} />}
+      {/* {en && <Downloadxcel data = {data} />} */}
 
       </Box>
        

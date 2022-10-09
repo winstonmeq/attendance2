@@ -34,9 +34,9 @@ const Downloadxcel = ({data}) => {
    
    <th>Out</th>
    </tr>
- {data.map((items,key)=>(
+ {data && data.map((items,i)=>(
   
-  <tr key={key}>
+  <tr key={i}>
        <td>{items.empInfo[0].bioId}</td>
        <td>{moment(items.timelog).format('YYYY-MM-D HH:mm:ss')}</td>
        
