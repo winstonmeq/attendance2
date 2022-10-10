@@ -3,15 +3,14 @@ import { Double } from "mongodb";
 import mongoose from "mongoose";
 
 const TravelSchema = mongoose.Schema({        
-
   
    
     lat: {
-        String:Double,
+        type:Double,
     },
 
     lng: {
-        String:Double,   
+        type:Double,   
 
     },
 

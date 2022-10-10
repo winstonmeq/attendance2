@@ -1,4 +1,5 @@
 
+import { Double } from "mongodb";
 import mongoose from "mongoose";
 
 const AttendanceSchema = mongoose.Schema({    
@@ -29,11 +30,11 @@ const AttendanceSchema = mongoose.Schema({
     },
 
     lat: {
-        String:Number,
+        type:Double,
     },
 
     lng: {
-        String:Number,   
+        type:Double,   
 
     },
 
