@@ -87,6 +87,7 @@ const Travel_list = () => {
               cell: (d) =>(
                   <Flex direction={'row'}>
                       <Travelmap coordinates={{lat:d.lat, lng: d.lng}} />    
+                      { console.log('coord',d.locInfo)}       
                   </Flex>                  
                   
               
