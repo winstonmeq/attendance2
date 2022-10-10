@@ -24,7 +24,7 @@ const Emplist = () => {
 
     const router = useRouter()
 
-//dfkjljsdfjsdf
+
 
     const loadroute = () => {
         router.push("https://attendance2-apkqba08e-winstonmeq.vercel.app/components/users/signIn")
@@ -55,6 +55,18 @@ const Emplist = () => {
               }
 
         }
+        
+        
+        
+        const rload = () =>{
+            
+            session &&   getData(session.user._id)                                 
+        
+
+        }
+
+
+
 
         useEffect(() => {       
             
@@ -135,9 +147,8 @@ const Emplist = () => {
             {        
                 name:"Action",
                 cell: (d) =>(
-                    <Flex direction={'row'}>
-                    
-                       <EmpAsign empid = {d._id} bioid = {d.bioId} fname = {d.fName} lname = {d.lName}/>
+                    <Flex direction={'row'}>                    
+                       <EmpAsign onreload={rload} empid = {d._id} bioid = {d.bioId} fname = {d.fName} lname = {d.lName}/>
                     </Flex>                  
                     
                 
@@ -146,6 +157,9 @@ const Emplist = () => {
             },         
             
             ]
+
+
+
 
 
     return (

@@ -26,13 +26,10 @@ import {
 const Header_layout = () => {
 
 const router = useRouter()
-const {data} = useSession();
+const {data: session} =  useSession();
+
 
 const { isOpen, onToggle } = useDisclosure();
-
-
-const sess = data;
-
 
 
 
@@ -74,12 +71,12 @@ const sess = data;
           textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
           fontFamily={'heading'}
           color={useColorModeValue('gray.800', 'white')}>
-          Logo
+          {session && session.user.email}
         </Text>
 
-        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+        {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
          Desktop
-        </Flex>
+        </Flex> */}
       </Flex>
 
       <Stack
@@ -87,14 +84,25 @@ const sess = data;
         justify={'flex-end'}
         direction={'row'}
         spacing={6}>
-        <Button
-          as={'a'}
+        {session ?  
+        <Button onClick={logout}        
           fontSize={'sm'}
-          fontWeight={400}
-          variant={'link'}
-          href={'components/users/signIn'}>
+          fontWeight={400}          
+          >
+          Sign Out
+        </Button>
+       :  
+       <Link href={'/components/users/signIn'}>
+        <Button         
+          fontSize={'sm'}
+          fontWeight={400}          
+          >
           Sign In
         </Button>
+        </Link>
+        
+       }
+            
         <Button
           display={{ base: 'none', md: 'inline-flex' }}
           fontSize={'sm'}
@@ -103,7 +111,7 @@ const sess = data;
           bg={'pink.400'}
           href={'#'}
           _hover={{
-            bg: 'pink.300',
+            bg: 'red.300',
           }}>
           Sign Up
         </Button>
@@ -111,7 +119,7 @@ const sess = data;
     </Flex>
 
     <Collapse in={isOpen} animateOpacity>
-      sdjlfjsldf
+    Menu
     </Collapse>
   </Box>
    

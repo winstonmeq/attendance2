@@ -9,12 +9,12 @@ import { useSession } from "next-auth/react";
 import FocusImage from './focusImage';
 import Downloadxcel from './download';
 
-
 const Att_list = () => {
 
     const [data, setdata] = useState([])
     const {data: session} =  useSession();
     const [en,seten] = useState(false);
+
     const router = useRouter()
 
 
@@ -77,18 +77,12 @@ const Att_list = () => {
           
             },
             {        
-                name:"Time In",
-                selector: row=>row.timeIn,
+                name:"Timelog",
+                selector: row=>row.timelog,
                 sortable: true,                
           
             },
-            {        
-              name:"Time Out",
-              selector: row=>row.timeOut,
-              sortable: true,                
-        
-          },
-          
+                  
            
             {        
                 name:"Selfie",
@@ -100,17 +94,17 @@ const Att_list = () => {
           
             },
 
-            {        
-                name:"Action",
-                cell: (d) =>(
-                    <Flex direction={'row'}>
-                        <Button size={'sm'} onClick={dload} >Save Data</Button>                       
-                    </Flex>                  
+            // {        
+            //     name:"Action",
+            //     cell: (d) =>(
+            //         <Flex direction={'row'}>
+            //             { console.log('coord',d.locInfo)}       
+            //         </Flex>                  
                     
                 
-            )              
+            // )              
           
-            },
+            // },
                
           
             
@@ -118,6 +112,7 @@ const Att_list = () => {
             
             ]
 
+           
 
     return (
         <Flex direction={'column'}>

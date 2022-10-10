@@ -10,7 +10,7 @@ import { Flex, Box,Input,useDisclosure,Modal,ModalBody,ModalContent, ModalFooter
 
 
 
-const EmpAsign = ({empid,bioid,fname,lname}) => {
+const EmpAsign = ({onreload,empid,bioid,fname,lname}) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [data, setdata] = useState([])
@@ -52,6 +52,7 @@ const EmpAsign = ({empid,bioid,fname,lname}) => {
         }
 
        
+//mao nih code para mag query sa location list sa latlng...
 
         const getData2 = async (id) => {    
 
@@ -103,8 +104,9 @@ const EmpAsign = ({empid,bioid,fname,lname}) => {
               } else {
         
                console.log("Assign Employee Location Successfully addedd") 
-              router.replace('emplist')
-             
+               
+               onClose()
+               onreload()
             
               }
       };  
@@ -119,7 +121,7 @@ const EmpAsign = ({empid,bioid,fname,lname}) => {
 return (
     <>
     {console.log('data2',latitude)}
-    <Button onClick={(e)=>{onOpen();getData(session.user._id)}}>Assignment</Button>
+    <Button onClick={(e)=>{onOpen();getData(session.user._id)}}>Assign</Button>
 
 <Modal isOpen={isOpen} onClose={onClose}>
   
@@ -154,7 +156,7 @@ return (
            type="text"
            className="form-control"
            value={fname}
-           onChange={(e) => {setfName(e.target.value)}}
+           onChange={''}
          />
         
        </InputGroup>
@@ -168,7 +170,7 @@ return (
            type="text"
            className="form-control"
            value={lname}
-            onChange={(e) => setlName(e.target.value)}
+            onChange={''}
          />
          
        </InputGroup>

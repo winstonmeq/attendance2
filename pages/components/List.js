@@ -65,6 +65,17 @@ return (
             Attendance
           </Button>
      </Link>
+     <Link href={'/components/travel/travel_list'}>
+        <Button
+           
+            fontSize={'lg'}
+            fontWeight={400}
+            color={'whiteAlpha.800'}
+            variant={'link'}
+            >
+            Travel
+          </Button>
+     </Link>
 
      
    
