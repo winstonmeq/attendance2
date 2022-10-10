@@ -35,7 +35,9 @@ const Travelmap = ({ coordinates }) => {
           onGoogleApiLoaded={({ map, maps }) => {
             renderMarkers(map, maps);
           }}
-        ></GoogleMapReact>
+        > <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Close
+       </Button></GoogleMapReact>
       </Box>
 
         <Button colorScheme='blue' mr={3} onClick={onClose}>
