@@ -30,11 +30,11 @@ const AttendanceSchema = mongoose.Schema({
     },
 
     lat: {
-        type:Double,
+        type:Number,
     },
 
     lng: {
-        type:Double,   
+        type:Number,   
 
     },
 
