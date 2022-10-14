@@ -26,7 +26,7 @@ export default function Home() {
 
     signOut({ redirect: true }).then(result => {
        
-     router.push('https://attendance2-flame.vercel.app/components/users/signIn')
+     router.push('/')
     });
 }
 

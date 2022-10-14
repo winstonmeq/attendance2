@@ -112,6 +112,11 @@ const Att_list = () => {
             
             ]
 
+
+            if (data.length == 0) {
+              return <Loader />;
+            }
+      
            
 
     return (

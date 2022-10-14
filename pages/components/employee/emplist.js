@@ -111,7 +111,7 @@ const Emplist = () => {
     },
   ];
 
-   if (data == "") {
+   if (data.length == 0) {
         return <Loader />;
       }
 

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Flex, Avatar, Button, Spacer } from '@chakra-ui/react';
 import Map_control from '../Map_control';
+import Loader from "../loader";
 
 
 const Loc_list = () => {
@@ -91,6 +92,11 @@ const Loc_list = () => {
             
             ]
 
+
+            if (data.length == 0) {
+                return <Loader />;
+              }
+        
 
     return (
     
