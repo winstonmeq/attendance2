@@ -119,6 +119,7 @@ const Emplist = () => {
 
   return (
     <Flex direction={"column"}>
+    
       <Add_employee />
       {console.log("list", data)}
       <DataTable

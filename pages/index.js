@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import {Flex, Box, Text, Spacer, color} from "@chakra-ui/react"
+import {Flex, Box,Button, Text, Spacer, color} from "@chakra-ui/react"
 import Map from './components/Map'
 import { useEffect, useState } from 'react'
 import MyMarker from './components/marker'
 import AddLoc from './components/AddLoc'
-
+import Link from 'next/link'
 
 
 
@@ -22,9 +22,22 @@ export default function Home() {
     position={"relative"}
     >   
   {console.log('env',process.env.NEXTAUTH_URL)}
+<Flex direction={'row'} justifyContent={'center'} p={20}>
+<Box>
+    <Link href={'https://drive.google.com/file/d/1YawP0qWLlaj6WgN6nsPfsVE2EbFHLUvw/view?usp=sharing'}>
+    <Button bg={'red.600'}>
+        <Text color={'white'}> Download APK from google drive!</Text>
+      </Button>
+    </Link>
+   
+    </Box>
+</Flex>
 
  
 <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
+
+
+
 <Box w={{ base: '100%', md: '50%', lg: '100%' }}>
       <Text fontSize={{ base: '20px', md: '30px', lg: '35px' }}>
       Mobile time tracking

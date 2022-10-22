@@ -70,7 +70,7 @@ const Add_employee = () => {
     
  <Flex>
  {/* {console.log(session.user._id)} */}
- <Button onClick={onOpen}>Add Employee</Button>
+ <Button onClick={onOpen} bg={"blue.200"} >Add Employee</Button>
 
 <Modal isOpen={isOpen} onClose={onClose}>
   

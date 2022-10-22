@@ -31,7 +31,8 @@
     "react-dom": "18.2.0",
     "react-export-table-to-excel": "^1.0.6",
     "react-icons": "^4.4.0",
-    "react-loader-spinner": "^5.3.4"
+    "react-loader-spinner": "^5.3.4",
+    "react-use-downloader": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "8.23.0",

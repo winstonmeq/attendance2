@@ -1,7 +1,6 @@
 import React from "react";
-import { Flex,Stack, Text, Button,
-  Box,
-   
+import { Flex,Stack, Text, Button,Menu,
+  Box,MenuButton,MenuList,MenuItem,   
     IconButton,
     Collapse,
     Icon,
@@ -37,7 +36,7 @@ const { isOpen, onToggle } = useDisclosure();
 
     signOut({ redirect: true }).then(result => {
        
-      router.push(process.env.NEXTAUTH_URL + '/components/users/signIn')
+      router.push('/')
     });
 }
 
@@ -46,27 +45,33 @@ const { isOpen, onToggle } = useDisclosure();
     <Flex
       bg={useColorModeValue('white', 'gray.800')}
       color={useColorModeValue('gray.600', 'white')}
-      minH={'60px'}
+      // minH={'60px'} width={"98vw"}
       py={{ base: 2 }}
-      px={{ base: 4 }}
+      px={{ base: 2 }}
       borderBottom={1}
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.900')}
       align={'center'}>
-      <Flex
-        flex={{ base: 1, md: 'auto' }}
-        ml={{ base: -2 }}
-        display={{ base: 'flex', md: 'none' }}>
-        <IconButton
-          onClick={onToggle}
-          icon={
-            isOpen ? <ArrowUpDownIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-          }
-          variant={'ghost'}
-          aria-label={'Toggle Navigation'}
-        />
-      </Flex>
+     
       <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+      <Flex
+            flex={{ base: 1, md: 'auto' }}
+            ml={{ base: -2 }}
+            display={{ base: 'flex', md: 'none' }}>
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? <ArrowUpDownIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              }
+              variant={'ghost'}
+              aria-label={'Toggle Navigation'}
+            />
+          </Flex>
+
+      <Flex display={{ base: 'none', md: 'flex' }} ml={5}>
+        <Text fontSize={18} pr={5}>Welcome:</Text>
+        </Flex>
+
         <Text
           textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
           fontFamily={'heading'}
@@ -74,9 +79,7 @@ const { isOpen, onToggle } = useDisclosure();
           {session && session.user.email}
         </Text>
 
-        {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-         Desktop
-        </Flex> */}
+      
       </Flex>
 
       <Stack
@@ -102,27 +105,105 @@ const { isOpen, onToggle } = useDisclosure();
         </Link>
         
        }
-            
+      
+       <Link href={'/components/users/createusers'}>
         <Button
           display={{ base: 'none', md: 'inline-flex' }}
           fontSize={'sm'}
           fontWeight={600}
           color={'white'}
-          bg={'pink.400'}
-          href={'#'}
+          bg={'blue.400'}
           _hover={{
             bg: 'red.300',
           }}>
           Sign Up
         </Button>
+        </Link>
       </Stack>
     </Flex>
 
-    <Collapse in={isOpen} animateOpacity>
-    Menu
-    </Collapse>
+    {/* <Collapse in={isOpen} animateOpacity > */}
+
+       
+    {session ? <Flex p={2} justifyContent={'center'} >
+          
+      <Stack direction={'row'}  >
+
+       <Link href={'/'}>
+        <Button
+          
+            fontSize={'lg'}
+            fontWeight={400}         
+            _hover={'red'}
+            >
+            Home
+          </Button>
+     </Link>
+        <Link href={'/components/employee/emplist'}>
+        <Button
+         
+            fontSize={'lg'}
+            fontWeight={400}
+         
+         >
+            Employees
+          </Button>
+     </Link>
+
+     <Link href={'/components/latlng/latlng_list'}>
+        <Button
+          
+            fontSize={'lg'}
+            fontWeight={400}
+        >
+            Location
+          </Button>
+     </Link>
+     <Link href={'/components/attendance/att_list'}>
+        <Button
+           
+            fontSize={'lg'}
+            fontWeight={400}
+         
+            >
+            Attendance
+          </Button>
+     </Link>
+     <Link href={'/components/travel/travel_list'}>
+        <Button
+           
+            fontSize={'lg'}
+            fontWeight={400}
+            >
+            Travel
+          </Button>
+     </Link>
+     <Link href={'/components/downloader'}>
+        <Button
+           
+            fontSize={'lg'}
+            fontWeight={400}
+          
+            >
+            Download APK
+          </Button>
+     </Link>
+
+
+     
+
+       </Stack>
+
+
+          
+    </Flex>: ""}
+          
+        {/* </Collapse> */}
+
+
   </Box>
    
+
   
   );
 };

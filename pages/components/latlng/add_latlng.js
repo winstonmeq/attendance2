@@ -10,13 +10,7 @@ import { useSession } from "next-auth/react";
 const Add_latlong = ({lat, lng, rad, Name }) => {
 
 
-    const [latitude, setlatitude] = useState(lat)
-    const [longitude, setlongitude] = useState(lng)
-    const [radius, setradius] = useState(rad)
-    const [locName, setlocName] = useState(Name)
-    const [userId, setuserId] = useState('')
-    const [errorMessage, setErrorMessage] = useState(null);
-    const {data: session} =  useSession();
+   const {data: session} =  useSession();
 
 
 

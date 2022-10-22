@@ -27,7 +27,7 @@ const Map_control = () =>{
         
        
         <Flex >  
-        <Button onClick={onOpen}>Add Location</Button>
+        <Button onClick={onOpen} bg={"blue.200"}>Add Location</Button>
       
         <Modal isOpen={isOpen} onClose={onClose}  >
 

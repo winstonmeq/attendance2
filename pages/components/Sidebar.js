@@ -59,7 +59,7 @@ export default function SimpleSidebar({ children }) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: 0, md: 80 }} p="2">
         {children}
       </Box>
     </Box>
